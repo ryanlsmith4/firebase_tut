@@ -6,10 +6,10 @@ admin.initializeApp(functions.config().firebase);
 
 exports.tryMessage = functions.firestore
   .document('products/{productId}')
-  .onCreate((snapshot, event) => {
+  .onCreate((snapshot, context) => {
 
 
-    const docId = event.params.productId;
+    const docId = context.params.productId;
 
     const name = snapshot.data().name
 
