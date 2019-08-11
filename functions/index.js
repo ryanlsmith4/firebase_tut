@@ -4,7 +4,7 @@ const admin = require('firebase-admin');
 
 admin.initializeApp(functions.config().firebase);
 
-exports.tryMessage = functions.firestore
+exports.sendMessage = functions.firestore
   .document('products/{productId}')
   .onCreate((snapshot, context) => {
 
