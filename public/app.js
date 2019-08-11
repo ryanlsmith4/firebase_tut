@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", (event) => {
 
   const app = firebase.app()
-  console.log("_________________________");
-  console.log(app);
+  // console.log("_________________________");
+  // console.log(app);
   const db = firebase.firestore();
 
   const myPost = db.collection('Posts').doc('firstPost');
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
       .then((result) => {
         const user = result.user;
         document.write(`Hello ${user.displayName}`);
-        console.log(user);
+        // console.log(user);
       })
         .catch(console.log)
   }
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const task = horseRef.put(file)
 
     task.then((snapshot) => {
-      console.log(snapshot)
+      // console.log(snapshot)
       const url = snapshot.downloadURL
       document.querySelector('#imgUpload').setAttribute('src', url)
     })
