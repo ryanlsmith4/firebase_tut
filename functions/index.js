@@ -8,11 +8,10 @@ exports.tryMessage = functions.firestore
   .document('products/{productId}')
   .onCreate((snapshot, event) => {
 
-    console.log('__________________________')
-    console.log(event.data.data())
+
     const docId = event.params.productId;
 
-    const name = snapshot._fieldsProto.name
+    const name = snapshot.data().name
 
     const productRef = admin.firestore().collection('products').doc(docId)
 
